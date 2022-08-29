@@ -2,7 +2,7 @@
   "name": "@eisen/durandal",
   "version": "1.0.0",
   "description": "Tool for creating a .svg graph for each file in folder",
-  "main": "dist/cli/index.js",
+  "main": "./cli/index.js",
   "scripts": {
     "build": "tsc"
   },
@@ -10,7 +10,7 @@
   "author": "Eisen",
   "license": "MIT",
   "bin": {
-    "durandal": "./dist/cli/index.js"
+    "durandal": "./cli/index.js"
   },
   "dependencies": {
     "madge": "^5.0.1"
