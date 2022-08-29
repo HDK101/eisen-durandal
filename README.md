@@ -17,7 +17,7 @@ npm i -g @eisen/durandal
 ### Create .durandal.json config
 ```json
 {
-  paths: [
+  "paths": [
     "./example"
   ]
 }
