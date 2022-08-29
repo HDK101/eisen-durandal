@@ -1,14 +1,14 @@
 {
   "name": "@eisen/durandal",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tool for creating a .svg graph for each file in folder",
   "main": "dist/cli/index.js",
   "scripts": {
     "build": "tsc"
   },
   "keywords": [],
   "author": "Eisen",
-  "license": "ISC",
+  "license": "MIT",
   "bin": {
     "durandal": "./dist/cli/index.js"
   },
