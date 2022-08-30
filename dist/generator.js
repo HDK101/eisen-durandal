@@ -11,14 +11,20 @@ const safeMkdir_1 = __importDefault(require("./utils/safeMkdir"));
 async function generateSVG(file) {
     const res = await (0, madge_1.default)(file);
     const buffer = await res.svg();
-    return buffer.toString('utf-8');
+    return (buffer === null || buffer === void 0 ? void 0 : buffer.toString('utf-8')) || '';
 }
 async function processFolder(dest) {
     const files = await (0, promises_1.readdir)(dest);
     const folder = (0, path_1.basename)(dest);
     await (0, safeMkdir_1.default)(`dependencies/${folder}`);
-    await Promise.all(files.map(async (file) => {
-        await (0, promises_1.writeFile)(`dependencies/${folder}/${file}.svg`, await generateSVG(`${dest}/${file}`));
-    }));
+    for (const file of files) {
+        const svgContent = await generateSVG(`${dest}/${file}`);
+        if (!svgContent) {
+            console.error(`Could not generate SVG for file: ${file} in folder ${folder}`);
+            continue;
+        }
+        await (0, promises_1.writeFile)(`dependencies/${folder}/${file}.svg`, svgContent);
+        console.log(`"${file}" generated`);
+    }
 }
 exports.processFolder = processFolder;

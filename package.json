@@ -1,12 +1,12 @@
 {
-  "name": "@eisen/durandal",
-  "version": "1.0.0",
+  "name": "hdk-durandal",
+  "version": "1.0.1",
   "description": "Tool for creating a .svg graph for each file in folder",
   "main": "./cli/index.js",
   "scripts": {
     "build": "tsc"
   },
-  "keywords": [],
+  "keywords": ["graph"],
   "author": "Eisen",
   "license": "MIT",
   "bin": {
