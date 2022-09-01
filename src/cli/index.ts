@@ -16,9 +16,11 @@ async function start() {
     return;
   }
 
-  await Promise.all(config.paths.map(async(path) => {
+  const { paths } = config;
+
+  for (const path of paths) {
     await processFolder(path);
-  }));
+  }
 
   console.log('Graphs generated.');
 }
