@@ -15,9 +15,10 @@ async function start() {
         console.error('Config field "paths" is empty.');
         return;
     }
-    await Promise.all(config.paths.map(async (path) => {
+    const { paths } = config;
+    for (const path of paths) {
         await (0, generator_1.processFolder)(path);
-    }));
+    }
     console.log('Graphs generated.');
 }
 start();
